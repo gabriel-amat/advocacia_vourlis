@@ -1,0 +1,87 @@
+/* ==========================================================================
+   UI COMPONENTS (Cards de Vidro, Iluminação Dinâmica & Efeitos)
+   Clean Architecture: Módulo de Componentes de Apresentação
+   ========================================================================== */
+
+/* Cartões com Spotlight Radial Dinâmico Reativo ao Mouse */
+.glow-card {
+  position: relative;
+  background: rgba(13, 20, 36, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.25rem;
+  overflow: hidden;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+              border-color 0.3s ease, 
+              box-shadow 0.3s ease;
+}
+
+.glow-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(212, 175, 55, 0.35);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.6), 
+              0 0 30px -10px rgba(212, 175, 55, 0.15);
+}
+
+/* Camada de luz do cursor (Spotlight) */
+.glow-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    420px circle at var(--mouse-x, 0px) var(--mouse-y, 0px),
+    rgba(212, 175, 55, 0.22),
+    rgba(30, 58, 138, 0.12) 40%,
+    transparent 70%
+  );
+  opacity: var(--glow-opacity, 0);
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* O conteúdo do card fica acima da iluminação */
+.glow-card > * {
+  position: relative;
+  z-index: 3;
+}
+
+/* Botão de Destaque Ouro */
+.btn-gold {
+  position: relative;
+  background: linear-gradient(135deg, #d4af37 0%, #aa8218 100%);
+  color: #070a14;
+  font-weight: 700;
+  border: none;
+  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
+  transition: all 0.3s ease;
+}
+
+.btn-gold:hover {
+  background: linear-gradient(135deg, #f3cf58 0%, #c59b27 100%);
+  box-shadow: 0 6px 25px rgba(212, 175, 55, 0.45);
+  transform: translateY(-2px);
+}
+
+/* Botão Flutuante do WhatsApp com Pulso Suave */
+.whatsapp-float {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 50;
+  animation: pulse-ring 2.5s infinite;
+}
+
+@keyframes pulse-ring {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
+  }
+  70% {
+    box-shadow: 0 0 0 16px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}

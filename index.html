@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>ADVOGADOS HUMAITÁ — Advocacia Trabalhista & Direito de Família</title>
+  <meta name="description" content="Escritório de advocacia especializado em Direito Trabalhista e Direito de Família. Defesa intransigente dos seus direitos e do seu patrimônio com condução direta pelos sócios." />
+
+  <!-- Tipografia de Impacto: Readex Pro (Editorial SaaS/Cinemático) + Archivo + Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@800;900&family=Cinzel:wght@600;700;800&family=Inter:wght@300;400;500;600;700&family=Readex+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS via CDN Oficial -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Readex Pro"', 'Inter', 'system-ui', 'sans-serif'],
+            serif: ['"Cinzel"', 'Georgia', 'serif'],
+            display: ['"Archivo"', 'Impact', 'sans-serif']
+          },
+          colors: {
+            gold: {
+              300: '#edd892',
+              400: '#e5c365',
+              500: '#d4af37',
+              600: '#b88e28',
+              700: '#8e6c17'
+            },
+            dark: {
+              900: '#06080e',
+              850: '#0a0d17',
+              800: '#0f1422',
+              700: '#151b2e'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* ==========================================================================
+       ESTILOS GLOBAIS & KINETIC TYPOGRAPHY
+       ========================================================================== */
+    html, body {
+      background-color: #06080e;
+      color: #ffffff;
+      font-family: 'Readex Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    /* Títulos Gigantes Escalonados (Staggered Hero) */
+    .hero-title {
+      font-family: 'Readex Pro', sans-serif;
+      letter-spacing: -0.045em;
+      line-height: 0.92;
+      text-transform: lowercase;
+      will-change: transform, opacity;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    /* Grão Sutil Analógico */
+    .grain-overlay {
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+    }
+
+    /* 3D Tilt Perspective Cards */
+    .card-3d-wrap {
+      perspective: 1200px;
+    }
+    .card-3d {
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+      transform-style: preserve-3d;
+    }
+    .card-3d:hover {
+      transform: translateY(-8px) rotateX(4deg) rotateY(-2deg);
+      box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.9), 0 0 40px -10px rgba(212, 175, 55, 0.25);
+    }
+
+    /* Iluminação Radial nos Cards */
+    .glow-panel {
+      position: relative;
+      background: rgba(15, 20, 34, 0.65);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 1.5rem;
+      overflow: hidden;
+    }
+
+    .glow-panel::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background: radial-gradient(
+        500px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+        rgba(212, 175, 55, 0.15),
+        transparent 65%
+      );
+      opacity: var(--glow-opacity, 0);
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .glow-panel > * {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Linhas Diagonais Estilizadas */
+    .diag-line-pos {
+      transform: rotate(20deg);
+    }
+    .diag-line-neg {
+      transform: rotate(-20deg);
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar {
+      width: 7px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #06080e;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #232b3e;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #d4af37;
+    }
+  </style>
+</head>
+<body class="selection:bg-gold-500 selection:text-black">
+
+  <!-- ==========================================================================
+       NAVBAR FLUTUANTE EM PÍLULA (PILL-SHAPED FLOATING NAVBAR)
+       ========================================================================== -->
+  <nav class="fixed top-0 left-0 right-0 z-50 px-6 md:px-12 pt-6 flex items-center justify-between gap-4 pointer-events-none">
+    
+    <!-- Pílula Esquerda: Logo + Marca -->
+    <a href="#" class="pointer-events-auto flex items-center gap-3 bg-neutral-900/90 hover:bg-neutral-900 transition-colors backdrop-blur-md rounded-full pl-4 pr-6 py-3 border border-white/10 shadow-2xl">
+      <!-- Ícone SVG Arquitetônico de Justiça -->
+      <svg class="h-5 w-5 text-gold-400" viewBox="0 0 256 256" fill="currentColor">
+        <path d="M 128 192 L 128 256 L 64.5 256 L 32 223 L 0 192 L 0 128 L 64 128 Z M 256 192 L 256 256 L 192.5 256 L 160 223 L 128 192 L 128 128 L 192 128 Z M 128 64 L 128 128 L 64.5 128 L 32 95 L 0 64 L 0 0 L 64 0 Z M 256 64 L 256 128 L 192.5 128 L 160 95 L 128 64 L 128 0 L 192 0 Z"/>
+      </svg>
+      <div class="flex flex-col">
+        <span class="text-white text-sm font-semibold tracking-tight">advogados humaitá</span>
+        <span class="text-[9px] text-gold-400 font-medium tracking-widest uppercase -mt-0.5">trabalhista & família</span>
+      </div>
+    </a>
+
+    <!-- Pílula Central: Links de Navegação (Desktop) -->
+    <div class="pointer-events-auto hidden lg:flex items-center gap-1 bg-neutral-900/90 backdrop-blur-md rounded-full px-3 py-2 border border-white/10 shadow-2xl">
+      <a href="#socios" class="text-neutral-300 hover:text-white transition-colors text-xs font-normal px-5 py-2 rounded-full hover:bg-white/5">sócios fundadores</a>
+      <a href="#atuacao" class="text-neutral-300 hover:text-white transition-colors text-xs font-normal px-5 py-2 rounded-full hover:bg-white/5">áreas de atuação</a>
+      <a href="#cases" class="text-neutral-300 hover:text-white transition-colors text-xs font-normal px-5 py-2 rounded-full hover:bg-white/5">resultados & cases</a>
+      <a href="#metodologia" class="text-neutral-300 hover:text-white transition-colors text-xs font-normal px-5 py-2 rounded-full hover:bg-white/5">metodologia</a>
+      <a href="#faq" class="text-neutral-300 hover:text-white transition-colors text-xs font-normal px-5 py-2 rounded-full hover:bg-white/5">faq</a>
+    </div>
+
+    <!-- Botão Direito: Agendamento Direto -->
+    <a href="#contato" class="pointer-events-auto bg-white text-black text-xs md:text-sm font-medium rounded-full px-6 py-3.5 hover:bg-gold-400 transition-colors shadow-2xl flex items-center gap-2">
+      <span>falar com os advogados</span>
+      <span class="text-xs">↗</span>
+    </a>
+  </nav>
+
+  <!-- ==========================================================================
+       HERO SECTION FULL-SCREEN (COM BACKGROUND VIDEO EM LOOPING & TYPO GIGANTE)
+       ========================================================================== -->
+  <section class="relative h-screen w-full overflow-hidden bg-black flex items-center justify-center">
+    
+    <!-- Background Video Cinematográfico em Loop Contínuo Fixo (Mesa & Vista Alta) -->
+    <video class="absolute inset-0 w-full h-full object-cover opacity-45 filter contrast-125" autoplay loop muted playsinline src="./assets/advogados_conversando_mesa_predio_com_vista_alta.mp4"></video>
+
+    <!-- Camada de Gradiente & Grão para Fusão Perfeita -->
+    <div class="absolute inset-0 bg-gradient-to-t from-[#06080e] via-black/40 to-black/70 pointer-events-none"></div>
+    <div class="absolute inset-0 grain-overlay pointer-events-none opacity-40"></div>
+
+    <!-- Conteúdo em Primeiro Plano (Foreground Wrapper) -->
+    <div class="relative h-full w-full max-w-[1600px] mx-auto z-10">
+
+      <!-- Três Palavras Gigantes Escalonadas (Staggered Kinetic Typography) -->
+      <h1 class="hero-title absolute text-white font-medium text-[15vw] md:text-[13vw] left-4 md:left-12 top-[17%]">
+        proteger
+      </h1>
+
+      <h1 class="hero-title absolute text-gold-400 font-medium text-[15vw] md:text-[13vw] right-4 md:right-12 top-[34%]">
+        seus
+      </h1>
+
+      <h1 class="hero-title absolute text-white font-medium text-[15vw] md:text-[13vw] left-[10%] md:left-[24%] top-[52%]">
+        direitos
+      </h1>
+
+      <!-- Card de Posicionamento Estratégico (Ultra Sofisticado com Glassmorphism) -->
+      <div class="absolute left-6 md:left-12 top-[43%] max-w-[390px] bg-neutral-950/75 backdrop-blur-2xl p-6 rounded-3xl border border-white/15 shadow-2xl hidden sm:block">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="w-2 h-2 rounded-full bg-gold-400 animate-pulse"></span>
+          <span class="text-[10px] font-mono uppercase tracking-[0.2em] text-gold-400 font-semibold">Atendimento Exclusivo</span>
+        </div>
+        <p class="text-[14px] leading-relaxed text-neutral-200 font-light mb-4">
+          Advocacia especializada em <strong class="text-white font-medium">Direito Trabalhista</strong> e <strong class="text-white font-medium">Direito de Família</strong>. Defesa implacável de direitos com condução direta e atendimento humanizado pelos sócios fundadores.
+        </p>
+        <div class="grid grid-cols-3 gap-2 pt-3 border-t border-white/10 text-[11px] text-neutral-300">
+          <div class="flex items-center gap-1.5">
+            <span class="text-gold-400">✓</span> Sem juniores
+          </div>
+          <div class="flex items-center gap-1.5">
+            <span class="text-gold-400">✓</span> Sigilo OAB
+          </div>
+          <div class="flex items-center gap-1.5">
+            <span class="text-gold-400">✓</span> Agilidade
+          </div>
+        </div>
+      </div>
+
+      <!-- Bloco de Estatística — Topo Direito -->
+      <div class="absolute right-6 md:right-16 top-[15%] text-right">
+        <div class="flex items-center gap-3 justify-end">
+          <div class="hidden md:block h-px w-20 bg-white/40 diag-line-pos"></div>
+          <span class="text-4xl md:text-6xl font-medium tracking-tight text-white">+R$ 48M</span>
+        </div>
+        <p class="text-xs md:text-sm text-gold-400 mt-1">em acordos e direitos resguardados</p>
+      </div>
+
+      <!-- Bloco de Estatística — Fundo Esquerdo -->
+      <div class="absolute left-6 md:left-16 bottom-16 md:bottom-20">
+        <div class="flex items-center gap-3">
+          <span class="text-4xl md:text-5xl font-medium tracking-tight text-white">+750</span>
+          <div class="hidden md:block h-px w-20 bg-white/40 diag-line-neg"></div>
+        </div>
+        <p class="text-xs md:text-sm text-white/70 mt-1">famílias e trabalhadores defendidos</p>
+      </div>
+
+      <!-- Bloco de Estatística — Fundo Direito -->
+      <div class="absolute right-6 md:right-16 bottom-16 md:bottom-20 text-right">
+        <div class="flex items-center gap-3 justify-end">
+          <div class="hidden md:block h-px w-20 bg-white/40 diag-line-neg"></div>
+          <span class="text-4xl md:text-5xl font-medium tracking-tight text-emerald-400">98.9%</span>
+        </div>
+        <p class="text-xs md:text-sm text-white/70 mt-1">de soluções favoráveis e acordos</p>
+      </div>
+
+      <!-- Indicador de Scroll Suave -->
+      <a href="#socios" class="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/40 hover:text-gold-400 transition-colors text-[10px] uppercase tracking-widest">
+        <span>explorar</span>
+        <span class="animate-bounce text-sm">↓</span>
+      </a>
+
+    </div>
+
+    <!-- Gradiente de Saída Inferior -->
+    <div class="pointer-events-none absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-b from-transparent to-[#06080e]"></div>
+  </section>
+
+  <!-- ==========================================================================
+       SEÇÃO: OS DOIS SÓCIOS FUNDADORES (3D TILT CARDS & PERFIL BIOGRÁFICO)
+       ========================================================================== -->
+  <section id="socios" class="py-28 px-6 md:px-12 max-w-7xl mx-auto relative z-10">
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+      <div>
+        <span class="text-gold-400 text-xs font-semibold uppercase tracking-[0.25em]">titulares fundadores</span>
+        <h2 class="text-3xl md:text-5xl font-semibold tracking-tight text-white mt-2">
+          atendimento exclusivo. sem repasse a juniores.
+        </h2>
+      </div>
+      <p class="text-neutral-400 text-sm max-w-md">
+        diferente dos escritórios de massa, no advogados humaitá você conversa diretamente com quem possui autoridade técnica e poder de decisão.
+      </p>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-10">
+
+      <!-- SÓCIO 1: DIREITO TRABALHISTA (COM FOTO REAL ADV_1.JPG) -->
+      <div class="card-3d-wrap">
+        <div class="glow-panel card-3d p-8 md:p-10 flex flex-col justify-between h-full border border-white/10">
+          <div>
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-6 mb-8">
+              <div class="flex items-center gap-5">
+                <img src="./assets/adv_1.jpg" alt="Advogado Sócio Fundador - Advogados Humaitá" class="w-20 h-20 rounded-2xl object-cover border border-gold-500/40 shadow-xl" />
+                <div>
+                  <h3 class="text-2xl font-semibold text-white tracking-tight">dr. sócio fundador</h3>
+                  <p class="text-gold-400 text-xs uppercase tracking-wider font-medium mt-0.5">sócio co-fundador • advogados humaitá</p>
+                  <p class="text-neutral-400 text-xs mt-1">gabinete trabalhista & contencioso de alta complexidade</p>
+                </div>
+              </div>
+              <span class="self-start sm:self-auto px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-[11px] text-neutral-300">
+                16 anos de atuação
+              </span>
+            </div>
+
+            <p class="text-neutral-300 text-sm leading-relaxed mb-6 font-light">
+              Especialista em <strong>Direito do Trabalho Estratégico</strong>. Atuação contundente em rescisões complexas de executivos, pejotização fraudulenta, equiparação salarial, passivos ocultos e defesas em dissídios coletivos perante TRTs e TST.
+            </p>
+
+            <div class="space-y-3 border-t border-white/10 pt-6 mb-8 text-xs text-neutral-400">
+              <div class="flex items-center gap-3">
+                <span class="w-1.5 h-1.5 rounded-full bg-gold-400"></span>
+                <span>Especialista em cálculos e liquidação de verbas trabalhistas de alto vulto</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <span class="w-1.5 h-1.5 rounded-full bg-gold-400"></span>
+                <span>Defesa patronal preventiva e contenciosa para empresas e grupos econômicos</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <span class="w-1.5 h-1.5 rounded-full bg-gold-400"></span>
+                <span>Mais de 400 audiências e sustentações em Tribunais Regionais do Trabalho</span>
+              </div>
+            </div>
+          </div>
+
+          <a href="#contato" class="inline-flex items-center justify-between w-full p-4 rounded-xl bg-white/5 hover:bg-gold-500 hover:text-black border border-white/10 text-white text-xs font-semibold uppercase tracking-wider transition-all">
+            <span>consultar área trabalhista</span>
+            <span>→</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- SÓCIA 2: DIREITO DE FAMÍLIA E SUCESSÕES -->
+      <div class="card-3d-wrap">
+        <div class="glow-panel card-3d p-8 md:p-10 flex flex-col justify-between h-full border border-white/10">
+          <div>
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-6 mb-8">
+              <div class="flex items-center gap-5">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80" alt="Sócia Fundadora - Direito de Família" class="w-20 h-20 rounded-2xl object-cover border border-gold-500/40 shadow-xl" />
+                <div>
+                  <h3 class="text-2xl font-semibold text-white tracking-tight">dra. sócia fundadora</h3>
+                  <p class="text-gold-400 text-xs uppercase tracking-wider font-medium mt-0.5">sócia co-fundadora • advogados humaitá</p>
+                  <p class="text-neutral-400 text-xs mt-1">gabinete de direito de família, divórcios & sucessões</p>
+                </div>
+              </div>
+              <span class="self-start sm:self-auto px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-[11px] text-neutral-300">
+                15 anos de atuação
+              </span>
+            </div>
+
+            <p class="text-neutral-300 text-sm leading-relaxed mb-6 font-light">
+              Especialista em <strong>Direito de Família e Sucessões</strong> com foco humanizado e firmeza técnica. Lidera processos de divórcio com partilha de grande patrimônio, fixação e revisão de alimentos, guarda compartilhada e inventários extrajudiciais ágeis.
+            </p>
+
+            <div class="space-y-3 border-t border-white/10 pt-6 mb-8 text-xs text-neutral-400">
+              <div class="flex items-center gap-3">
+                <span class="w-1.5 h-1.5 rounded-full bg-gold-400"></span>
+                <span>Mediação e condução de partilhas patrimoniais amigáveis ou litigiosas</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <span class="w-1.5 h-1.5 rounded-full bg-gold-400"></span>
+                <span>Proteção integral do bem-estar dos filhos e regulação de visitas</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <span class="w-1.5 h-1.5 rounded-full bg-gold-400"></span>
+                <span>Inventários em cartório concluídos com máxima celeridade e economia tributária</span>
+              </div>
+            </div>
+          </div>
+
+          <a href="#contato" class="inline-flex items-center justify-between w-full p-4 rounded-xl bg-white/5 hover:bg-gold-500 hover:text-black border border-white/10 text-white text-xs font-semibold uppercase tracking-wider transition-all">
+            <span>consultar área de família</span>
+            <span>→</span>
+          </a>
+        </div>
+      </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SEÇÃO CINEMÁTICA FULL-BLEED: TRIBUNAIS SUPERIORES (VÍDEO DE PONTA A PONTA)
+       ========================================================================== -->
+  <section class="relative w-full min-h-[85vh] lg:min-h-[90vh] flex flex-col justify-between overflow-hidden bg-black border-y border-white/15">
+    
+    <!-- VÍDEO FULL-SCREEN DE PONTA A PONTA (100% NÍTIDO, SEM JANELINHA) -->
+    <video class="absolute inset-0 w-full h-full object-cover filter contrast-115 brightness-105" autoplay loop muted playsinline src="./assets/adv_andando_para_o_tribunal.mp4"></video>
+
+    <!-- Vinheta Suave nas Bordas Superior e Inferior para Integração Perfeita -->
+    <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-transparent to-black/95 pointer-events-none"></div>
+
+    <!-- TOPO: Badges Flutuantes dos Tribunais Superiores -->
+    <div class="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 pt-12 flex flex-wrap items-center justify-end gap-4">
+      <div class="flex items-center gap-3 bg-black/60 backdrop-blur-md px-4 py-2 rounded-full border border-white/15 text-xs text-neutral-300">
+        <span class="font-semibold text-white">TST</span>
+        <span class="text-white/30">•</span>
+        <span class="font-semibold text-white">STJ</span>
+        <span class="text-white/30">•</span>
+        <span class="font-semibold text-white">TRTs</span>
+        <span class="text-white/30">•</span>
+        <span class="font-semibold text-white">TJ</span>
+      </div>
+    </div>
+
+    <!-- RODAPÉ: Painel Arquitetônico Flutuante de Ponta a Ponta com Informações -->
+    <div class="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 pb-14 pt-32">
+      <div class="bg-neutral-950/75 backdrop-blur-xl border border-white/15 rounded-3xl p-8 md:p-12 shadow-2xl">
+        <div class="grid lg:grid-cols-12 gap-8 items-end">
+          
+          <div class="lg:col-span-8">
+            <span class="text-gold-400 text-xs font-semibold uppercase tracking-[0.25em] block mb-2">
+              tribunais superiores & litígios de grande vulto
+            </span>
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-semibold text-white tracking-tight leading-[1.1] mb-4">
+              presença física na tribuna. quando o caso não aceita derrotas.
+            </h2>
+            <p class="text-neutral-300 text-sm md:text-base leading-relaxed max-w-2xl font-light">
+              Casos de repercussão geral exigem entrega pessoal de memoriais aos gabinetes dos Ministros e sustentação oral contundente. Não delegamos essa etapa a correspondentes.
+            </p>
+          </div>
+
+          <div class="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-4 justify-end">
+            <a href="#contato" class="w-full py-4 px-6 rounded-2xl bg-white text-black hover:bg-gold-400 text-xs uppercase tracking-widest font-bold transition-all shadow-2xl flex items-center justify-center gap-3">
+              <span>agendar sustentação oral</span>
+              <span class="text-sm">↗</span>
+            </a>
+            <div class="text-[11px] text-neutral-400 text-center flex items-center justify-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+              <span>Memoriais despachados diretamente pelos sócios</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ==========================================================================
+       SEÇÃO: ÁREAS DE ATUAÇÃO ESTRATÉGICAS
+       ========================================================================== -->
+  <section id="atuacao" class="py-24 px-6 md:px-12 bg-[#080c16] border-y border-white/5">
+    <div class="max-w-7xl mx-auto">
+      <div class="max-w-2xl mb-16">
+        <span class="text-gold-400 text-xs font-semibold uppercase tracking-[0.25em]">competência de ponta</span>
+        <h2 class="text-3xl md:text-5xl font-semibold tracking-tight text-white mt-2">
+          foco intransigente em direito trabalhista e de família.
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- Área 1 -->
+        <div class="glow-panel p-8">
+          <span class="text-gold-400 text-2xl font-serif">01</span>
+          <h3 class="text-xl font-semibold text-white mt-3 mb-2">direito do trabalho estratégico</h3>
+          <p class="text-neutral-400 text-xs leading-relaxed mb-6">
+            Defesa de executivos, reversão de justa causa, descaracterização de PJ fraudulento, horas extras e equiparação salarial em disputas de alto valor.
+          </p>
+          <div class="text-[11px] text-neutral-300 font-medium">
+            → Condução: <span class="text-gold-300">Gabinete Trabalhista</span>
+          </div>
+        </div>
+
+        <!-- Área 2 -->
+        <div class="glow-panel p-8">
+          <span class="text-gold-400 text-2xl font-serif">02</span>
+          <h3 class="text-xl font-semibold text-white mt-3 mb-2">divórcio & partilha de bens</h3>
+          <p class="text-neutral-400 text-xs leading-relaxed mb-6">
+            Dissolução de casamento consensual ou litigiosa, bloqueio cautelar de patrimônio oculto, partilha de empresas, imóveis e pactos antenupciais.
+          </p>
+          <div class="text-[11px] text-neutral-300 font-medium">
+            → Condução: <span class="text-gold-300">Gabinete de Família</span>
+          </div>
+        </div>
+
+        <!-- Área 3 -->
+        <div class="glow-panel p-8">
+          <span class="text-gold-400 text-2xl font-serif">03</span>
+          <h3 class="text-xl font-semibold text-white mt-3 mb-2">guarda, visitas & pensão</h3>
+          <p class="text-neutral-400 text-xs leading-relaxed mb-6">
+            Regulamentação de guarda compartilhada, fixação e revisão judicial de pensão alimentícia justa, convivência familiar e alienação parental.
+          </p>
+          <div class="text-[11px] text-neutral-300 font-medium">
+            → Condução: <span class="text-gold-300">Gabinete de Família</span>
+          </div>
+        </div>
+
+        <!-- Área 4 -->
+        <div class="glow-panel p-8">
+          <span class="text-gold-400 text-2xl font-serif">04</span>
+          <h3 class="text-xl font-semibold text-white mt-3 mb-2">defesa trabalhista empresarial</h3>
+          <p class="text-neutral-400 text-xs leading-relaxed mb-6">
+            Auditoria e redução de passivos ocultos para empresas, acordos sindicais, elaboração de contratos de trabalho e representação contenciosa nos TRTs e TST.
+          </p>
+          <div class="text-[11px] text-neutral-300 font-medium">
+            → Condução: <span class="text-gold-300">Gabinete Trabalhista</span>
+          </div>
+        </div>
+
+        <!-- Área 5 -->
+        <div class="glow-panel p-8">
+          <span class="text-gold-400 text-2xl font-serif">05</span>
+          <h3 class="text-xl font-semibold text-white mt-3 mb-2">inventários & herança</h3>
+          <p class="text-neutral-400 text-xs leading-relaxed mb-6">
+            Inventário extrajudicial em cartório ou judicial, partilha amigável entre herdeiros, testamentos, doações em vida e redução legal do imposto ITCMD.
+          </p>
+          <div class="text-[11px] text-neutral-300 font-medium">
+            → Condução: <span class="text-gold-300">Gabinete de Família</span>
+          </div>
+        </div>
+
+        <!-- Área 6 -->
+        <div class="glow-panel p-8">
+          <span class="text-gold-400 text-2xl font-serif">06</span>
+          <h3 class="text-xl font-semibold text-white mt-3 mb-2">sustentação em trts, tst & stj</h3>
+          <p class="text-neutral-400 text-xs leading-relaxed mb-6">
+            Atuação técnica nas instâncias recursais superiores, com memoriais aos desembargadores e ministros para rever decisões desfavoráveis.
+          </p>
+          <div class="text-[11px] text-neutral-300 font-medium">
+            → Condução: <span class="text-gold-300">Ambos os Sócios</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SEÇÃO: CASOS EMBLEMÁTICOS E RESULTADOS (PROVA DE IMPACTO)
+       ========================================================================== -->
+  <section id="cases" class="py-28 px-6 md:px-12 max-w-7xl mx-auto">
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+      <div>
+        <span class="text-gold-400 text-xs font-semibold uppercase tracking-[0.25em]">track record</span>
+        <h2 class="text-3xl md:text-5xl font-semibold tracking-tight text-white mt-2">
+          estudos de caso e impacto financeiro
+        </h2>
+      </div>
+      <p class="text-neutral-400 text-sm max-w-sm">
+        casos reais com desfechos favoráveis preservando o sigilo incondicional dos clientes sob a égide da OAB.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      
+      <!-- Case 1 -->
+      <div class="glow-panel p-8 flex flex-col justify-between">
+        <div>
+          <span class="text-3xl font-semibold text-gold-400">R$ 3.2M</span>
+          <p class="text-xs text-neutral-400 uppercase tracking-wider mt-1 mb-6">Acordo Trabalhista Homologado</p>
+          <h4 class="text-lg font-semibold text-white mb-3">Diretor Executivo do Setor Financeiro</h4>
+          <p class="text-neutral-300 text-xs leading-relaxed font-light">
+            Reconhecimento judicial de vínculo empregatício e pejotização simulada com condenação em bônus retido, equiparação e reflexos indenizatórios integrais.
+          </p>
+        </div>
+        <div class="mt-8 pt-4 border-t border-white/10 text-[11px] text-neutral-400">
+          Setor: Bancário & Fintech • Tribunal: TRT-2 (SP)
+        </div>
+      </div>
+
+      <!-- Case 2 -->
+      <div class="glow-panel p-8 flex flex-col justify-between">
+        <div>
+          <span class="text-3xl font-semibold text-emerald-400">100% Acordo</span>
+          <p class="text-xs text-neutral-400 uppercase tracking-wider mt-1 mb-6">Divórcio & Partilha Sem Litígio</p>
+          <h4 class="text-lg font-semibold text-white mb-3">Dissolução Matrimonial com Patrimônio Misto</h4>
+          <p class="text-neutral-300 text-xs leading-relaxed font-light">
+            Mediação estratégica entre os cônjuges garantindo partilha justa de imóveis e quotas de empresas familiares, sem bloqueio de contas e preservando a guarda.
+          </p>
+        </div>
+        <div class="mt-8 pt-4 border-t border-white/10 text-[11px] text-neutral-400">
+          Vara de Família & Sucessões • São Paulo
+        </div>
+      </div>
+
+      <!-- Case 3 -->
+      <div class="glow-panel p-8 flex flex-col justify-between">
+        <div>
+          <span class="text-3xl font-semibold text-gold-400">R$ 18M</span>
+          <p class="text-xs text-neutral-400 uppercase tracking-wider mt-1 mb-6">Inventário Extrajudicial Concluído</p>
+          <h4 class="text-lg font-semibold text-white mb-3">Partilha Ágil de Herança Familiar</h4>
+          <p class="text-neutral-300 text-xs leading-relaxed font-light">
+            Resolução de inventário em cartório em menos de 60 dias para 4 herdeiros, com planejamento tributário que reduziu expressivamente o recolhimento de ITCMD.
+          </p>
+        </div>
+        <div class="mt-8 pt-4 border-t border-white/10 text-[11px] text-neutral-400">
+          Sucessões & Patrimônio • Cartório de Notas
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SEÇÃO: METODOLOGIA DE ATENDIMENTO VIP (TIMELINE EM 4 PASSOS)
+       ========================================================================== -->
+  <section id="metodologia" class="py-24 px-6 md:px-12 bg-[#080c16] border-t border-white/5">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center max-w-xl mx-auto mb-16">
+        <span class="text-gold-400 text-xs font-semibold uppercase tracking-[0.25em]">rigor de ponta a ponta</span>
+        <h2 class="text-3xl md:text-5xl font-semibold tracking-tight text-white mt-2">
+          como trabalhamos
+        </h2>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        
+        <div class="glow-panel p-8">
+          <span class="text-xs font-mono text-gold-400">FASE 01</span>
+          <h3 class="text-lg font-semibold text-white mt-3 mb-2">Triagem & Confidencialidade</h3>
+          <p class="text-neutral-400 text-xs leading-relaxed">
+            Acordo de confidencialidade (NDA) imediato e recebimento da documentação inicial diretamente pela mesa dos sócios em até 24h.
+          </p>
+        </div>
+
+        <div class="glow-panel p-8">
+          <span class="text-xs font-mono text-gold-400">FASE 02</span>
+          <h3 class="text-lg font-semibold text-white mt-3 mb-2">Diagnóstico Estratégico</h3>
+          <p class="text-neutral-400 text-xs leading-relaxed">
+            Reunião presencial na Faria Lima ou por videoconferência criptografada para traçar o plano tático de ataque ou defesa.
+          </p>
+        </div>
+
+        <div class="glow-panel p-8">
+          <span class="text-xs font-mono text-gold-400">FASE 03</span>
+          <h3 class="text-lg font-semibold text-white mt-3 mb-2">Condução Direta</h3>
+          <p class="text-neutral-400 text-xs leading-relaxed">
+            Dr. Daniel ou Dra. Camila redigem e assinam cada petição relevante e sobem às tribunas para sustentações orais.
+          </p>
+        </div>
+
+        <div class="glow-panel p-8">
+          <span class="text-xs font-mono text-gold-400">FASE 04</span>
+          <h3 class="text-lg font-semibold text-white mt-3 mb-2">Relatórios em Tempo Real</h3>
+          <p class="text-neutral-400 text-xs leading-relaxed">
+            Canal de WhatsApp exclusivo com o sócio responsável com informes instantâneos de cada movimentação processual.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SEÇÃO CINEMÁTICA FULL-BLEED: RIGOR PROBATÓRIO & BANCADA (DE PONTA A PONTA)
+       ========================================================================== -->
+  <section class="relative w-full min-h-[85vh] lg:min-h-[90vh] flex flex-col justify-between overflow-hidden bg-black border-y border-white/15">
+    
+    <!-- VÍDEO FULL-SCREEN DE PONTA A PONTA (100% NÍTIDO, SEM JANELAS) -->
+    <video class="absolute inset-0 w-full h-full object-cover filter contrast-115 brightness-105" autoplay loop muted playsinline src="./assets/mesa_no_tribunal_com_papeis.mp4"></video>
+
+    <!-- Vinheta Cinemática Suave (Preservando Centro 100% Livre e Nítido) -->
+    <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-transparent to-black/95 pointer-events-none"></div>
+
+    <!-- TOPO: Badge Flutuante de Rigor Probatório -->
+    <div class="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 pt-12 flex flex-wrap items-center justify-between gap-4">
+      <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-white text-xs">
+        <span class="w-2.5 h-2.5 rounded-full bg-gold-400 animate-pulse"></span>
+        <span class="font-semibold uppercase tracking-wider text-gold-400">Instrução Probatória & Análise Pericial</span>
+      </div>
+
+      <div class="hidden sm:flex items-center gap-3 bg-black/60 backdrop-blur-md px-4 py-2 rounded-full border border-white/15 text-xs text-neutral-300">
+        <span class="font-semibold text-white">Auditoria Fiscal</span>
+        <span class="text-white/30">•</span>
+        <span class="font-semibold text-white">Contratos Complexos</span>
+        <span class="text-white/30">•</span>
+        <span class="font-semibold text-white">Perícia Contábil</span>
+      </div>
+    </div>
+
+    <!-- RODAPÉ: Painel Arquitetônico Flutuante de Ponta a Ponta com Informações -->
+    <div class="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 pb-14 pt-32">
+      <div class="bg-neutral-950/75 backdrop-blur-xl border border-white/15 rounded-3xl p-8 md:p-12 shadow-2xl">
+        <div class="grid lg:grid-cols-12 gap-8 items-end">
+          
+          <div class="lg:col-span-8">
+            <span class="text-gold-400 text-xs font-semibold uppercase tracking-[0.25em] block mb-2">
+              minúcia documental & precedentes consolidados
+            </span>
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-semibold text-white tracking-tight leading-[1.1] mb-4">
+              cada cláusula, cada prova, cada precedente.
+            </h2>
+            <p class="text-neutral-300 text-sm md:text-base leading-relaxed max-w-2xl font-light">
+              Em litígios societários e tributários, a vitória reside na precisão cirúrgica dos documentos. Nossa equipe analisa os balanços contábeis, livros fiscais e o histórico de cada notificação antes de assinar qualquer petição relevante.
+            </p>
+          </div>
+
+          <div class="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-4 justify-end">
+            <a href="#contato" class="w-full py-4 px-6 rounded-2xl bg-white text-black hover:bg-gold-400 text-xs uppercase tracking-widest font-bold transition-all shadow-2xl flex items-center justify-center gap-3">
+              <span>submeter caso para análise</span>
+              <span class="text-sm">↗</span>
+            </a>
+            <div class="text-[11px] text-neutral-400 text-center flex items-center justify-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-gold-400"></span>
+              <span>Sigilo profissional incondicional sob a OAB</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ==========================================================================
+       SEÇÃO: PERGUNTAS FREQUENTES (FAQ)
+       ========================================================================== -->
+  <section id="faq" class="py-24 px-6 md:px-12 max-w-4xl mx-auto">
+    <div class="text-center mb-16">
+      <span class="text-gold-400 text-xs font-semibold uppercase tracking-[0.25em]">transparência</span>
+      <h2 class="text-3xl md:text-5xl font-semibold tracking-tight text-white mt-2">perguntas frequentes</h2>
+    </div>
+
+    <div class="space-y-4">
+      <details class="group glow-panel p-6 cursor-pointer">
+        <summary class="font-medium text-white list-none flex justify-between items-center text-sm md:text-base">
+          Como é estipulada a remuneração e honorários advocatícios?
+          <span class="text-gold-400 group-open:rotate-180 transition-transform duration-300">▼</span>
+        </summary>
+        <p class="mt-4 text-xs md:text-sm text-neutral-400 leading-relaxed border-t border-white/5 pt-4 font-light">
+          Nossos contratos de honorários são estritamente alinhados à complexidade e ao vulto econômico da demanda. Trabalhamos com modelos combinados de pró-labore inicial e honorários de êxito (success fee), sempre formalizados com clareza e previsibilidade financeira para o cliente.
+        </p>
+      </details>
+
+      <details class="group glow-panel p-6 cursor-pointer">
+        <summary class="font-medium text-white list-none flex justify-between items-center text-sm md:text-base">
+          Vocês atuam em casos fora de São Paulo?
+          <span class="text-gold-400 group-open:rotate-180 transition-transform duration-300">▼</span>
+        </summary>
+        <p class="mt-4 text-xs md:text-sm text-neutral-400 leading-relaxed border-t border-white/5 pt-4 font-light">
+          Sim. Possuímos estrutura tecnológica completa para atuação nacional em todos os Tribunais de Justiça estaduais, Tribunais Regionais Federais e perante o Superior Tribunal de Justiça (STJ) e Supremo Tribunal Federal (STF) em Brasília.
+        </p>
+      </details>
+
+      <details class="group glow-panel p-6 cursor-pointer">
+        <summary class="font-medium text-white list-none flex justify-between items-center text-sm md:text-base">
+          Meu caso será repassado para estagiários ou associados juniores?
+          <span class="text-gold-400 group-open:rotate-180 transition-transform duration-300">▼</span>
+        </summary>
+        <p class="mt-4 text-xs md:text-sm text-neutral-400 leading-relaxed border-t border-white/5 pt-4 font-light">
+          Não. O compromisso fundador do Advogados Humaitá é a exclusividade boutique: toda a estratégia, confecção de peças cruciais e contato direto com o cliente é exercido de forma direta e inegociável pelos sócios titulares.
+        </p>
+      </details>
+
+      <details class="group glow-panel p-6 cursor-pointer">
+        <summary class="font-medium text-white list-none flex justify-between items-center text-sm md:text-base">
+          Como funciona o sigilo e guarda dos documentos enviados?
+          <span class="text-gold-400 group-open:rotate-180 transition-transform duration-300">▼</span>
+        </summary>
+        <p class="mt-4 text-xs md:text-sm text-neutral-400 leading-relaxed border-t border-white/5 pt-4 font-light">
+          Todas as informações submetidas contam com o privilégio legal do sigilo profissional (artigo 7º da Lei 8.906/94) e protocolo de custódia criptografada em nuvem segura com autenticação em múltiplos fatores.
+        </p>
+      </details>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SEÇÃO: FORMULÁRIO DE CONTATO VIP DIRETO COM OS SÓCIOS
+       ========================================================================== -->
+  <section id="contato" class="py-24 px-6 md:px-12 bg-black border-t border-white/10 relative">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center max-w-xl mx-auto mb-12">
+        <span class="text-gold-400 text-xs font-semibold uppercase tracking-[0.25em]">agendamento reservado</span>
+        <h2 class="text-3xl md:text-5xl font-semibold tracking-tight text-white mt-2 mb-4">
+          converse diretamente com os titulares
+        </h2>
+        <p class="text-neutral-400 text-sm">
+          preencha os dados básicos. nossa equipe retornará com máxima discrição e agilidade.
+        </p>
+      </div>
+
+      <div class="glow-panel p-8 md:p-12 border border-white/10 max-w-2xl mx-auto">
+        <form id="contact-form" class="space-y-6">
+          <div>
+            <label class="block text-xs uppercase tracking-wider text-neutral-400 mb-2">Seu Nome Completo</label>
+            <input type="text" required placeholder="ex: Roberto Guimarães" class="w-full px-5 py-3.5 rounded-xl bg-neutral-900 border border-white/10 text-white placeholder-neutral-600 focus:outline-none focus:border-gold-500 text-sm transition" />
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs uppercase tracking-wider text-neutral-400 mb-2">WhatsApp / Telefone Direto</label>
+              <input type="tel" required placeholder="(11) 98888-7777" class="w-full px-5 py-3.5 rounded-xl bg-neutral-900 border border-white/10 text-white placeholder-neutral-600 focus:outline-none focus:border-gold-500 text-sm transition" />
+            </div>
+            <div>
+              <label class="block text-xs uppercase tracking-wider text-neutral-400 mb-2">Área de Interesse</label>
+              <select class="w-full px-5 py-3.5 rounded-xl bg-neutral-900 border border-white/10 text-white focus:outline-none focus:border-gold-500 text-sm transition">
+                <option>Direito Trabalhista (Reclamação ou Defesa)</option>
+                <option>Direito de Família (Divórcio, Guarda & Partilha)</option>
+                <option>Inventário & Sucessão Familiar</option>
+                <option>Outra Demanda Estratégica</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs uppercase tracking-wider text-neutral-400 mb-2">Breve Síntese da Situação</label>
+            <textarea rows="3" placeholder="Descreva sucintamente os fatos para análise prévia de viabilidade..." class="w-full px-5 py-3.5 rounded-xl bg-neutral-900 border border-white/10 text-white placeholder-neutral-600 focus:outline-none focus:border-gold-500 text-sm transition"></textarea>
+          </div>
+
+          <button type="submit" class="w-full py-4 rounded-xl bg-white text-black font-semibold text-xs uppercase tracking-widest hover:bg-gold-400 transition-colors shadow-2xl flex items-center justify-center gap-2">
+            <span>solicitar atendimento confidencial</span>
+            <span>↗</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       RODAPÉ INSTITUCIONAL
+       ========================================================================== -->
+  <footer class="py-16 px-6 md:px-12 bg-[#04060a] border-t border-white/5 text-xs text-neutral-500">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+      <div>
+        <p class="text-white text-sm font-semibold tracking-tight">ADVOGADOS HUMAITÁ — SOCIEDADE DE ADVOGADOS</p>
+        <p class="mt-1">Avenida Brigadeiro Faria Lima, 3477 - 18º Andar - Itaim Bibi, São Paulo - SP</p>
+        <p class="text-neutral-600 mt-1">Sociedade de Advogados inscrita na OAB • Defesa Especializada em Direito Trabalhista e de Família</p>
+      </div>
+
+      <div class="text-center md:text-right">
+        <p>&copy; 2026 Advogados Humaitá. Todos os direitos reservados.</p>
+        <p class="text-neutral-600 mt-1">Em conformidade com o Provimento nº 205/2021 da OAB sobre publicidade jurídica ética.</p>
+        <p class="mt-2 text-neutral-400">Desenvolvido por <a href="https://amat.digital" target="_blank" rel="noopener noreferrer" class="text-gold-400 hover:text-white font-medium transition-colors">amat.digital</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       BOTÃO FLUTUANTE DE WHATSAPP DIRETO COM OS SÓCIOS
+       ========================================================================== -->
+  <a href="https://wa.me/551130408800?text=Ol%C3%A1%2C+gostaria+de+agendar+uma+consulta+com+os+s%C3%B3cios+do+Advogados+Humait%C3%A1" target="_blank" rel="noopener noreferrer" class="fixed bottom-8 right-8 z-50 bg-emerald-600 hover:bg-emerald-500 text-white p-4 rounded-full shadow-2xl transition-all hover:scale-110 flex items-center justify-center" aria-label="WhatsApp Advogados Humaitá">
+    <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+      <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86.173.086.275.071.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.099.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.159.57 4.184 1.564 5.938l-1.564 5.822 6.002-1.573c1.706.945 3.666 1.481 5.753 1.481 6.627 0 12-5.373 12-12 0-6.627-5.373-12-12-12zm0 21.6c-1.894 0-3.65-.568-5.116-1.543l-.367-.245-3.56.933.95-3.473-.269-.427c-1.077-1.508-1.638-3.3-1.638-5.163 0-5.293 4.306-9.6 9.6-9.6s9.6 4.307 9.6 9.6-4.306 9.6-9.6 9.6z"/>
+    </svg>
+  </a>
+
+  <!-- ==========================================================================
+       VANILLA JAVASCRIPT: ILUMINAÇÃO DINÂMICA 3D & FEEDBACK DE FORMULÁRIO
+       ========================================================================== -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Efeito de Iluminação Dinâmica ao passar o mouse nos painéis de vidro
+      const glowPanels = document.querySelectorAll('.glow-panel');
+      glowPanels.forEach(panel => {
+        panel.addEventListener('mousemove', (e) => {
+          const rect = panel.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          panel.style.setProperty('--mouse-x', `${x}px`);
+          panel.style.setProperty('--mouse-y', `${y}px`);
+          panel.style.setProperty('--glow-opacity', '1');
+        });
+        panel.addEventListener('mouseleave', () => {
+          panel.style.setProperty('--glow-opacity', '0');
+        });
+      });
+
+      // 2. Feedback de Envio do Formulário VIP
+      const contactForm = document.getElementById('contact-form');
+      if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const btn = contactForm.querySelector('button[type="submit"]');
+          const originalContent = btn.innerHTML;
+          btn.disabled = true;
+          btn.innerHTML = '<span>Processando com sigilo...</span>';
+
+          setTimeout(() => {
+            btn.innerHTML = '<span>✓ Solicitação Enviada. Retornaremos em instantes!</span>';
+            btn.classList.remove('bg-white', 'text-black');
+            btn.classList.add('bg-emerald-600', 'text-white');
+
+            setTimeout(() => {
+              contactForm.reset();
+              btn.disabled = false;
+              btn.innerHTML = originalContent;
+              btn.classList.remove('bg-emerald-600', 'text-white');
+              btn.classList.add('bg-white', 'text-black');
+            }, 4000);
+          }, 1200);
+        });
+      }
+    });
+  </script>
+</body>
+</html>
